@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.2.xsd">
+
+  <module name="human-resource" package="com.axelor.apps.hr.db" />
+
+  <entity name="HrEmpAllowance" cacheable="true" table="hr_emp_allowance">
+
+    <many-to-one ref="com.axelor.apps.hr.db.Employee" name="employee" column="employee_id" title="Employee" required="true"></many-to-one>
+    <many-to-one ref="com.axelor.apps.base.db.Company" name="company" column="company_id" required="true" title="Company" />
+    <many-to-one ref="com.axelor.apps.hr.db.HrAllowanceType" name="allowanceType" column="hr_allowance_type" required="true" title="Allowance Type" />
+    <string name="description"></string>
+    <date name="startDate" required="true" title="Start Date"></date>
+    <date name="endDate" required="true" title="End Date"></date>
+    <string name="comments" title="Comments"></string>
+    <boolean name="isActive" required="true" default="true"></boolean>
+
+  </entity>
+
+</domain-models>

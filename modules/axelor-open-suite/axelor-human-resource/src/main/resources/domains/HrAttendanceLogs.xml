@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.2.xsd">
+
+  <module name="human-resource" package="com.axelor.apps.hr.db" />
+
+  <entity name="HrAttendanceLog" cacheable="true" table="hr_attendance_logs">
+
+    <many-to-one ref="com.axelor.apps.hr.db.Employee" name="employee" column="employee_id" title="Employee" required="true"></many-to-one>
+    <date name="shiftDate" required="true"></date>
+    <datetime name="shiftDateTime" required="true"></datetime>
+    <string name="location" nullable="true" max="50"></string>
+  </entity>
+
+  <enum name="FormulaTypes">
+    <item name="FIXED" title="Fixed" />
+    <item name="PERCENTAGE" title="Percentage" />
+  </enum>
+
+</domain-models>

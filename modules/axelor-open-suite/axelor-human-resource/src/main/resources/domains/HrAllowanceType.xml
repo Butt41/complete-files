@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.2.xsd">
+
+  <module name="human-resource" package="com.axelor.apps.hr.db" />
+
+  <entity name="HrAllowanceType" cacheable="true" table="hr_allowance_types">
+
+    <many-to-one ref="com.axelor.apps.base.db.Company" name="company" column="company_id" required="true"></many-to-one>
+    <string name="name" required="true"></string>
+    <string name="description"></string>
+    <enum ref="FormulaTypes" name="formulaType" required="true"></enum>
+    <decimal name="amount" required="true" default="0.0"></decimal>
+  </entity>
+
+  <enum name="FormulaTypes">
+    <item name="FIXED" title="Fixed" />
+    <item name="PERCENTAGE" title="Percentage" />
+  </enum>
+
+</domain-models>

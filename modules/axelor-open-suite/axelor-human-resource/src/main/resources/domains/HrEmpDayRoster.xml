@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.2.xsd">
+
+  <module name="human-resource" package="com.axelor.apps.hr.db" />
+
+  <entity name="HrEmpDayRoster" cacheable="true" table="hr_emp_day_roster">
+
+    <many-to-one ref="com.axelor.apps.hr.db.Employee" name="employee" column="employee_id" title="Employee" required="true"></many-to-one>
+    <many-to-one ref="com.axelor.apps.base.db.Company" name="company" column="company_id" required="true" title="Company" />
+    <date name="shiftDate" required="true" title="Shift Date"></date>
+    <datetime name="startTime" required="true" title="Start Date Time"></datetime>
+    <datetime name="endTime" required="true" title="End Date Time"></datetime>
+    <string name="comments" title="Comments"></string>
+
+  </entity>
+
+</domain-models>

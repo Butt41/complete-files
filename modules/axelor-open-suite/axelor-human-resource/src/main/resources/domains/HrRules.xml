@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.2.xsd">
+
+  <module name="human-resource" package="com.axelor.apps.hr.db" />
+
+  <entity name="HrRule" cacheable="true" table="hr_rules">
+
+    <string name="ruleName"></string>
+    <enum ref="RuleConstants" name="ruleConstant" required="true"></enum>
+    <string name="description"></string>
+  </entity>
+
+  <enum name="RuleConstants">
+    <item name="ALLOWED_GRACE_MINUTES" title="Allowed Grace Minutes" />
+    <item name="OVERTIME_START_AFTER" title="Overtime Start After" />
+  </enum>
+
+</domain-models>

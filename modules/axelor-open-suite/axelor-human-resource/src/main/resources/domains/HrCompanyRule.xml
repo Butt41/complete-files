@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.2.xsd">
+
+  <module name="human-resource" package="com.axelor.apps.hr.db" />
+
+  <entity name="HrCompanyRule" cacheable="true" table="hr_company_rules">
+
+    <many-to-one ref="com.axelor.apps.base.db.Company" name="company" column="company_id"></many-to-one>
+    <many-to-one ref="com.axelor.apps.hr.db.HrRule" name="hrRule" title="HR Rule" column="hr_att_rule_id" required="true"></many-to-one>
+    <integer title="Rule Value" name="value" required="true"></integer>
+    <boolean name="status" title="Status" default="true" required="true"></boolean>
+  </entity>
+
+</domain-models>

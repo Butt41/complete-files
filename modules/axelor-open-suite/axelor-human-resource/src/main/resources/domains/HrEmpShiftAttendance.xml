@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.2.xsd">
+
+  <module name="human-resource" package="com.axelor.apps.hr.db" />
+
+  <entity name="HrEmpShiftAttendance" cacheable="true" table="hr_emp_shift_attendance">
+
+    <many-to-one ref="com.axelor.apps.base.db.Company" name="company" column="company_id" required="true" title="Company" />
+    <many-to-one ref="com.axelor.apps.hr.db.Employee" name="employee" column="employee_id" title="Employee" required="true"></many-to-one>
+    <many-to-one ref="com.axelor.apps.hr.db.HrShift" name="shift" column="hr_shift_id" title="Shift"></many-to-one>
+    <many-to-one ref="com.axelor.apps.hr.db.HrShiftEmployee" name="empShift" column="hr_emp_shift_id" title="Employee Shift"></many-to-one>
+    <one-to-one ref="com.axelor.apps.hr.db.HrEmpDayRoster" name="dayRoster" column="day_roster_id"></one-to-one>
+    <date name="shiftDate" required="true"></date>
+    <datetime name="checkedIn" required="true"></datetime>
+    <datetime name="checkedOut"></datetime>
+    <string name="checkInStatus" column="checkin_status"></string>
+    <string name="checkOutStatus" column="checkout_status"></string>
+    <time name="dutyHours" required="true"></time>
+    <time name="workedHours"></time>
+    <time name="extraHours"></time>
+    <string name="checkinLocation" column="checkin_location"></string>
+    <string name="checkoutLocation" column="checkout_location"></string>
+    <string name="location" nullable="true" max="50"></string>
+  </entity>
+
+</domain-models>
