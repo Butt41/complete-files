@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.2.xsd">
+
+  <grid name="hr-emp-shift-attendance-grid" model="com.axelor.apps.hr.db.HrEmpShiftAttendance" title="Daily Attendance">
+    <field name="company" form-view="company-form" grid-view="company-grid" if="__config__.app.getApp('base').getEnableMultiCompany()" />
+    <field name="shift" canEdit="false" form-view="hrshift-form" grid-view="hrshift-grid" colSpan="4" />
+    <field name="dayRoster" target-name="comments" canEdit="false" form-view="hr-emp-day-roster-form" grid-view="hr-emp-day-roster-grid" colSpan="4" />
+    <field name="employee" canEdit="false" form-view="employee-form" grid-view="employee-grid" colSpan="4" />
+    <field name="shiftDate" />
+    <field name="checkedIn" />
+    <field name="checkedOut" />
+    <field name="checkInStatus" />
+    <field name="checkOutStatus" />
+    <field name="dutyHours" />
+    <field name="workedHours" />
+    <field name="extraHours" />
+  </grid>
+  <form name="hr-emp-shift-attendance-form" title="Daily Attendance" model="com.axelor.apps.hr.db.HrEmpShiftAttendance" onNew="action--emp-shift-attendance-record-default">
+    <panel title="Daily Attendance">
+      <field name="shiftDate" />
+      <field name="checkedIn" />
+      <field name="checkedOut" />
+      <field name="checkInStatus" />
+      <field name="checkOutStatus" />
+      <field name="dutyHours" />
+      <field name="workedHours" />
+      <field name="extraHours" />
+      <field name="checkinLocation" />
+      <field name="checkoutLocation" />
+      <field name="shift" canEdit="false" form-view="hrshift-form" grid-view="hrshift-grid" colSpan="4" />
+      <field name="employee" canEdit="false" form-view="employee-form" grid-view="employee-grid" colSpan="4" />
+      <field name="company" canEdit="false" form-view="company-form" grid-view="company-grid" colSpan="4" />
+    </panel>
+  </form>
+
+</object-views>

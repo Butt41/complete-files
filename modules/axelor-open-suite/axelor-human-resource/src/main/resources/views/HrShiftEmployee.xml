@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.2.xsd">
+
+  <!-- <calendar name="hr-shift-employee-calendar" title="Employees Roster" model="com.axelor.apps.hr.db.HrShiftEmployee" mode="month" eventStart="shiftStart" eventStop="shiftEnd">
+    <field name="shift" />
+  </calendar> -->
+  <grid name="hr-shift-employee-grid" model="com.axelor.apps.hr.db.HrShiftEmployee" title="Employees Roster">
+    <field name="employee" canEdit="false" form-view="employee-form" grid-view="employee-grid" colSpan="4" />
+    <field name="shift" canEdit="false" form-view="hrshift-form" grid-view="hrshift-grid" colSpan="4" />
+    <field name="shiftDate"></field>
+    <field name="shiftStart"></field>
+    <field name="shiftEnd"></field>
+  </grid>
+  <form name="hr-shift-employee-form" title="Employees Roster" model="com.axelor.apps.hr.db.HrShiftEmployee" onNew="action-shift-employee-record-default">
+    <panel title="Shift Information">
+      <field name="shiftDate"></field>
+      <field name="shiftStart"></field>
+      <field name="shiftEnd"></field>
+      <field name="shift" canEdit="false" form-view="hrshift-form" grid-view="hrshift-grid" colSpan="4" />
+      <field name="company" canEdit="false" form-view="company-form" grid-view="company-grid" colSpan="4" />
+      <field name="employee" canEdit="false" form-view="employee-form" grid-view="employee-grid" colSpan="4" />
+    </panel>
+  </form>
+
+</object-views>

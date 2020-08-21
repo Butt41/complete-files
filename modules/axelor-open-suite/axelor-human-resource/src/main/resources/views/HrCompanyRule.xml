@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.2.xsd">
+
+  <grid name="hr-company-rule-grid" model="com.axelor.apps.hr.db.HrCompanyRule" title="Company Rules">
+    <field name="hrRule" target-name="ruleName" form-view="hr-rule-form" grid-view="hr-rule-grid" />
+    <field name="status"></field>
+    <field name="value"></field>
+    <field name="company" form-view="company-form" grid-view="company-grid" if="__config__.app.getApp('base').getEnableMultiCompany()" />
+  </grid>
+  <form name="hr-company-rule-form" title="Company Rule" model="com.axelor.apps.hr.db.HrCompanyRule" onNew="action-company-rule-record-default">
+    <panel title="Company Rule">
+      <field name="hrRule" target-name="ruleName" canEdit="false" form-view="hr-rule-form" grid-view="hr-rule-grid"  colSpan="4" />
+      <field name="value"></field>
+      <field name="status"></field>
+      <field name="company" canEdit="false" form-view="company-form" grid-view="company-grid" colSpan="4" />
+    </panel>
+  </form>
+
+</object-views>

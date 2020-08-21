@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.2.xsd">
+
+  <grid name="hr-rule-grid" model="com.axelor.apps.hr.db.HrRule" title="Rules">
+    <field name="ruleName"></field>
+    <field name="ruleConstant"></field>
+    <field name="description"></field>
+  </grid>
+  <form name="hr-rule-form" title="Rule" model="com.axelor.apps.hr.db.HrRule" onNew="action-rule-record-default">
+    <panel title="Rule">
+      <field name="ruleName"></field>
+      <field name="ruleConstant"></field>
+      <field name="description"></field>
+    </panel>
+  </form>
+
+</object-views>

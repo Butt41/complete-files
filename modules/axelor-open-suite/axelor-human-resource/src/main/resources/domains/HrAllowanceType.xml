@@ -8,7 +8,8 @@
     <many-to-one ref="com.axelor.apps.base.db.Company" name="company" column="company_id" required="true"></many-to-one>
     <string name="name" required="true"></string>
     <string name="description"></string>
-    <enum ref="FormulaTypes" name="formulaType" required="true"></enum>
+    <date name="activationDate" required="true" title="Activation Date"></date>
+<enum ref="FormulaTypes" name="formulaType" required="true"></enum>
     <decimal name="amount" required="true" default="0.0"></decimal>
   </entity>
 
