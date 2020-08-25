@@ -5,6 +5,8 @@
     <field name="name"></field>
     <field name="description"></field>
     <field name="formulaType"></field>
+<field name="activationDate" title="Activation Date"></field>
+
     <field name="amount"></field>
     <field name="company" form-view="company-form" grid-view="company-grid" if="__config__.app.getApp('base').getEnableMultiCompany()" />
   </grid>
@@ -12,6 +14,8 @@
     <panel title="Allowance Information">
       <field name="name"></field>
       <field name="description"></field>
+<field name="activationDate" title="Activation Date"></field>
+
       <field name="formulaType"></field>
       <field name="amount"></field>
       <field name="company" canEdit="false" form-view="company-form" grid-view="company-grid" colSpan="4" />
